@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+#cards {
+    /* border: 1px solid chocolate; */
+    background-color: #ffffff;
+}
+
+* {
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+#cards {
+    max-width: 1000px;
+    height: 800px;
+}
+
+.container {
+    width: 100%;
+    /* border: 1px solid chocolate; */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    text-align: center;
+}
+
+.newPrice::after {
+    margin-left: 15px;
+    content: "50,00 руб.";
+    text-decoration: line-through;
+    font-size: 19px;
+    line-height: 1.42;
+    color: #868282;
+}
+
+#poster {
+    width: 280px;
+    height: 420px;
+}
+
+#poster img:nth-child(2) {
+    position: relative;
+    left: 35%;
+    bottom: 75%;
+}
+
+#poster img:nth-child(3) {
+    position: relative;
+    right: 33%;
+    bottom: 26%;
+}
+
+.title {
+    padding: 10px;
+    font-size: 30px;
+    line-height: 0.9;
+    font-weight: bold;
+    color: #616161;
+}
+
+.newPrice {
+    padding: 10px 0;
+    font-size: 30px;
+    line-height: 0.9;
+    font-weight: bold;
+    color: #242323;
+}
+
+.rating {
+    position: relative;
+    font-size: 40px;
+    display: inline-block;
+}
+
+.rating::before {
+    content: "★★★★★";
+    display: block;
+}
+
+.ratingItems {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+
+.ratingItem {
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+.ratingLable {
+    flex: 0 0 20%;
+    height: 100%;
+    cursor: pointer;
+    color: #6c5353;
+}
+
+.ratingLable::before {
+    content: "★";
+    display: block;
+}
+
+.ratingItem:checked,
+.ratingItem:checked~.ratingLable {
+    color: yellow;
+}
+
+.ratingLable:hover,
+.ratingLable:hover~.ratingLable,
+.ratingLable:checked~.ratingLable:hover {
+    color: yellow;
+}
+
+#buy {
+    width: 250px;
+    height: 66px;
+    background-image: url("../images/button.png");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: none;
+}
